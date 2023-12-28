@@ -1,4 +1,3 @@
-# Opt_confidential_20230921 Aris Kalokyris #
 
 # Hadoop, YARN, Spark installation and configurations #
 / Created a specific superuser named hadoop for this assignment, on a VM running Ubuntu 20.04
