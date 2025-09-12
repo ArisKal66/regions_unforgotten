@@ -42,8 +42,13 @@ The database follows a Star Schema design:
 1. PostgreSQL 16
 2. Python 3.13
   Python Libraries:
-    - psycopg2 (data insert on SQL server)
+    - psycopg2 (insert data on SQL server)
     - faker (to generate mock data)
+
+Proceeding with DB creation:
+```sql
+CREATE DATABASE sales_db;
+```
 
 
 
