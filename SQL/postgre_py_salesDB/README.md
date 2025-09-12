@@ -39,18 +39,18 @@ The database follows a Star Schema design:
 ```
 ## Implementation/Execution
 ### Requirments:
-1. PostgreSQL 16
+1. PostgreSQL 16 (older versions should be ok though)
 2. Python 3.13
   Python Libraries:
-    - psycopg2 (insert data on SQL server)
-    - faker (to generate mock data)
+    - psycopg2 (inserting data on SQL server)
+    - faker (mock data generation)
 
-Proceeding with DB creation:
+**Proceeding with DB creation:**
 ```sql
 CREATE DATABASE sales_db;
 ```
 
-Tables creation from `schema.sql`:
+**Tables creation from `schema.sql`:**
 ```sql
 CREATE TABLE customers (
     customer_id SERIAL PRIMARY KEY,
@@ -91,4 +91,35 @@ CREATE TABLE fact_sales (
     quantity_sold INT,
     total_amount DECIMAL(10,2)
 );
+```
+
+**Fake (mock) data generation:**
+```bash
+python fake_data_generation.py
+```
+
+**Example Queries:**
+1. Total Revenue by Product Category
+```sql
+SELECT
+    p.category,
+    SUM(fs.total_amount) AS total_rev_per_categ
+FROM
+    fact_sales fs
+JOIN products p ON fs.product_id = p.product_id
+GROUP BY p.category
+ORDER BY total_rev_per_categ DESC;
+```
+
+2. Ranking Stores by Sales per Month
+```sql
+SELECT
+    c.customer_id,
+    SUM(fs.total_amount) AS total_rev_per_cust
+FROM
+    fact_sales fs
+JOIN customers c ON fs.customer_id = c.customer_id
+GROUP BY c.customer_id
+ORDER BY total_rev_per_cust DESC
+LIMIT 5;
 ```
