@@ -1,5 +1,5 @@
 # **Sales Data Analytics with SQL**
-Project Overview:
+##**Project Overview**
 ```
 This project simulates a retail sales data warehouse using a Star Schema in PostgreSQL.
 It includes:
@@ -12,3 +12,27 @@ Advanced SQL queries for analytics and reporting
 
 The goal is to demonstrate SQL expertise in data modeling, ETL, and analytical querying
 ```
+
+##**Database Schema**
+The database follows a Star Schema design:
+              +-----------------+
+              |   dim_customers |
+              +-----------------+
+                      |
+                      |
+              +-----------------+
+              |    fact_sales   |
+              +-----------------+
+              | customer_id     |
+              | product_id      |
+              | store_id        |
+              | date_id         |
+              | quantity_sold   |
+              | total_amount    |
+              +-----------------+
+             /           |          \
+            /            |           \
++---------------+ +---------------+ +---------------+
+|  dim_products | |   dim_stores  | |   dim_dates   |
++---------------+ +---------------+ +---------------+
+
