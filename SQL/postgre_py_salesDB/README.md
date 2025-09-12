@@ -111,8 +111,8 @@ GROUP BY p.category
 ORDER BY total_rev_per_categ DESC;
 ```
 <img width="268" height="90" alt="image" src="https://github.com/user-attachments/assets/fed5358a-4b80-4c86-b7c3-d2671871d54a" />
-
-
+<br/>
+<br/>
 2. Ranking Stores by Sales per Month
 ```sql
 SELECT
@@ -125,4 +125,5 @@ GROUP BY c.customer_id
 ORDER BY total_rev_per_cust DESC
 LIMIT 5;
 ```
+
 
