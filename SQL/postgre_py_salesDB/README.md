@@ -1,5 +1,5 @@
 # **Sales Data Analytics with SQL**
-##**Project Overview**
+## Project Overview
 ```
 This project simulates a retail sales data warehouse using a Star Schema in PostgreSQL.
 It includes:
@@ -13,7 +13,7 @@ Advanced SQL queries for analytics and reporting
 The goal is to demonstrate SQL expertise in data modeling, ETL, and analytical querying
 ```
 
-##**Database Schema**
+## Database Schema
 The database follows a Star Schema design:
 ```
               +-----------------+
@@ -37,10 +37,11 @@ The database follows a Star Schema design:
 |   products    | |    stores     | |    dates      |
 +---------------+ +---------------+ +---------------+
 ```
-##**Implementation/Execution**
-###Requirments:
+## Implementation/Execution
+### Requirments:
 PostgreSQL 16
 Python 3.13
 Python Libraries:
 -psycopg2 (data insert on SQL server)
 -faker (to generate mock data)
+
