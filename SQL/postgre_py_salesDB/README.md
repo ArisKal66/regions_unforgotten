@@ -45,7 +45,7 @@ The database follows a Star Schema design:
     - psycopg2 (inserting data on SQL server)
     - faker (mock data generation)
 
-**Proceeding with DB creation:**
+**Proceeding with DB creation/ingestion:**
 ```sql
 CREATE DATABASE sales_db;
 ```
@@ -110,6 +110,8 @@ JOIN products p ON fs.product_id = p.product_id
 GROUP BY p.category
 ORDER BY total_rev_per_categ DESC;
 ```
+<img width="268" height="90" alt="image" src="https://github.com/user-attachments/assets/fed5358a-4b80-4c86-b7c3-d2671871d54a" />
+
 
 2. Ranking Stores by Sales per Month
 ```sql
@@ -123,3 +125,4 @@ GROUP BY c.customer_id
 ORDER BY total_rev_per_cust DESC
 LIMIT 5;
 ```
+
