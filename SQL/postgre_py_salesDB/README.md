@@ -15,6 +15,7 @@ The goal is to demonstrate SQL expertise in data modeling, ETL, and analytical q
 
 ##**Database Schema**
 The database follows a Star Schema design:
+```
               +-----------------+
               |   dim_customers |
               +-----------------+
@@ -35,4 +36,5 @@ The database follows a Star Schema design:
 +---------------+ +---------------+ +---------------+
 |  dim_products | |   dim_stores  | |   dim_dates   |
 +---------------+ +---------------+ +---------------+
+```
 
