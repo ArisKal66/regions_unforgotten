@@ -17,7 +17,7 @@ The goal is to demonstrate SQL expertise in data modeling, ETL, and analytical q
 The database follows a Star Schema design:
 ```
               +-----------------+
-              |   dim_customers |
+              |    customers    |
               +-----------------+
                       |
                       |
@@ -31,10 +31,16 @@ The database follows a Star Schema design:
               | quantity_sold   |
               | total_amount    |
               +-----------------+
-             /           |          \
-            /            |           \
+             /           |         \
+            /            |          \
 +---------------+ +---------------+ +---------------+
-|  dim_products | |   dim_stores  | |   dim_dates   |
+|   products    | |    stores     | |    dates      |
 +---------------+ +---------------+ +---------------+
 ```
-
+##**Implementation/Execution**
+###Requirments:
+PostgreSQL 16
+Python 3.13
+Python Libraries:
+-psycopg2 (data insert on SQL server)
+-faker (to generate mock data)
