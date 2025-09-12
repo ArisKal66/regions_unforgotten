@@ -170,6 +170,8 @@ HAVING SUM(fs.total_amount) > 1000
 ORDER BY customer_totals DESC
 LIMIT 10;
 ```
+<img width="253" height="293" alt="image" src="https://github.com/user-attachments/assets/5786a36b-f3a6-45a8-a0c6-003ebeba0bef" />
+
 
 6. Previous Purchase per Customer
 ```sql
@@ -185,6 +187,7 @@ JOIN dates d ON fs.date_id = d.date_id
 ORDER BY c.customer_id, d.date;
 ```
 <img width="437" height="365" alt="image" src="https://github.com/user-attachments/assets/6db2541c-4c91-447a-807e-5b6d9971b3ac" />
+
 
 > [!NOTE]
 > More WiP
