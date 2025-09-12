@@ -39,10 +39,11 @@ The database follows a Star Schema design:
 ```
 ## Implementation/Execution
 ### Requirments:
-PostgreSQL 16
-Python 3.13
-Python Libraries:
-- psycopg2 (data insert on SQL server)
-- faker (to generate mock data)
+1. PostgreSQL 16
+2. Python 3.13
+  Python Libraries:
+    - psycopg2 (data insert on SQL server)
+    - faker (to generate mock data)
+
 
 
