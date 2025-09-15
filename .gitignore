@@ -1,0 +1,11 @@
+# Ignore credentials / env
+conn_test.py
+.env
+
+# Python related
+__pycache__/
+*.pyc
+
+# Virtual env
+.venv/
+venv/
