@@ -93,7 +93,7 @@ CREATE TABLE fact_sales (
 );
 ```
 
-**Fake (mock) data generation:**
+**Fake (mock) data generation (modified to log in using credentials of virtual environment):**
 ```bash
 python fake_data_generation.py
 ```
@@ -191,3 +191,4 @@ ORDER BY c.customer_id, d.date;
 
 > [!NOTE]
 > More WiP
+
