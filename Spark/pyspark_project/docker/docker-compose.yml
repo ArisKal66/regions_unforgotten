@@ -1,0 +1,10 @@
+services:
+  spark-job:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: spark_etl
+    volumes:
+      - ../data:/app/data      # Mount local data folder into container
+      - ../output:/app/output  # Mount local output folder
+    command: ["spark-submit", "spark_job.py"]
