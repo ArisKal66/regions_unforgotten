@@ -71,12 +71,13 @@ Concept: Evaluate delayed orders, find responsible employee, include customer da
 ```sql
 SELECT o.order_id, (o.required_date - o.order_date) AS dategap, (o.required_date - o.shipped_date) AS ship_gap, 
 (o.shipped_date - o.order_date) AS thresh_gap, o.ship_country, o.order_date, o.required_date, o.shipped_date,
-e.employee_id, e.first_name ||' '|| e.last_name AS customer_full_name, e.title, e.reports_to, 
+e.employee_id, e.first_name ||' '|| e.last_name AS employee_full_name, e.title, e.reports_to, 
 c.customer_id, c.contact_name, c.contact_title
 FROM orders o
 JOIN customers c ON o.customer_id = c.customer_id
 JOIN employees e ON o.employee_id = e.employee_id
 WHERE (o.required_date - o.shipped_date) < 0
+AND e.title IN ('Sales Representative', 'Sales Manager')
 ORDER BY dategap DESC;
 ```
-<img width="1915" height="917" alt="image" src="https://github.com/user-attachments/assets/6a1fa88b-f119-4dcf-96de-3d8e2aaa9ac8" />
+<img width="1912" height="891" alt="image" src="https://github.com/user-attachments/assets/dda2084e-0035-403d-94d8-9b2debe2a399" />
