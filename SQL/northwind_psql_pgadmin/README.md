@@ -27,7 +27,7 @@ After running the docker images defined in `docker-compose.yml`, the user should
 
 <img width="1916" height="844" alt="image" src="https://github.com/user-attachments/assets/1f9971a7-4749-47ac-b1d0-58892286d620" />
 
-## Sample Queeries:
+## Sample Queries:
 
 ### 1. Using a plethora of filters on certain column
 
@@ -66,3 +66,17 @@ ORDER BY ship_country, orders_count DESC;
 ```
 <img width="1915" height="911" alt="image" src="https://github.com/user-attachments/assets/50f5f058-769c-477b-8050-40d7c3ef8e4f" />
 
+### 5. Column Calculations/Concatenations, Joins, multiple "WHERE" conditions
+Concept: Evaluate delayed orders, find responsible employee, include customer data for possible compensation 
+```sql
+SELECT o.order_id, (o.required_date - o.order_date) AS dategap, (o.required_date - o.shipped_date) AS ship_gap, 
+(o.shipped_date - o.order_date) AS thresh_gap, o.ship_country, o.order_date, o.required_date, o.shipped_date,
+e.employee_id, e.first_name ||' '|| e.last_name AS customer_full_name, e.title, e.reports_to, 
+c.customer_id, c.contact_name, c.contact_title
+FROM orders o
+JOIN customers c ON o.customer_id = c.customer_id
+JOIN employees e ON o.employee_id = e.employee_id
+WHERE (o.required_date - o.shipped_date) < 0
+ORDER BY dategap DESC;
+```
+<img width="1915" height="917" alt="image" src="https://github.com/user-attachments/assets/6a1fa88b-f119-4dcf-96de-3d8e2aaa9ac8" />
