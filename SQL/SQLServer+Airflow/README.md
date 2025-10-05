@@ -102,3 +102,4 @@ FROM INFORMATION_SCHEMA.TABLES
 WHERE TABLE_TYPE = 'BASE TABLE';
 GO
 ```
+<img width="1054" height="271" alt="image" src="https://github.com/user-attachments/assets/c038f9ac-be2b-4585-b114-26275448786a" />
