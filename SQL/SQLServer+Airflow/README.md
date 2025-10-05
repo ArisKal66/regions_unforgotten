@@ -42,7 +42,7 @@ ls /opt
 Figured out that instead of `/mssql-tools/` I should have used `/mssql-tools18/`.
 The next issue occured by the required encryption verification, but since this container is running locally, the recommended solution was to disable it:
 ```bash
-docker exec -it sqlserver /opt/mssql-tools/bin/sqlcmd `
+docker exec -it sqlserver /opt/mssql-tools18/bin/sqlcmd `
    -S localhost -U sa -P ${MSSQL_SA_PASSWORD} `
    -C
 ```
@@ -73,7 +73,7 @@ Northwind
 The next step is about loading the `northwind.sql` data on SQL Server, from the project's root directory:
 ```bash
 docker cp ./data/northwind.sql SQLserver:/tmp/northwind.sql
-docker exec -it sqlserver /opt/mssql-tools/bin/sqlcmd `
+docker exec -it sqlserver /opt/mssql-tools18/bin/sqlcmd `
    -S localhost -U sa -P ${MSSQL_SA_PASSWORD} `
    -C `
    -i /tmp/northwind.sql
@@ -88,7 +88,7 @@ docker-compose down -v
 
 docker-compose up -d
 
-docker exec -it sqlserver /opt/mssql-tools/bin/sqlcmd `
+docker exec -it sqlserver /opt/mssql-tools18/bin/sqlcmd `
    -S localhost -U sa -P ${MSSQL_SA_PASSWORD} `
    -C `
    -Q "USE Northwind; :r /docker-entrypoint-initdb.d/instnwnd.sql"
