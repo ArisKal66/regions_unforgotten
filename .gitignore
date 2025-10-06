@@ -9,3 +9,6 @@ __pycache__/
 # Virtual env
 .venv/
 venv/
+
+# Airflow related
+.cfg
