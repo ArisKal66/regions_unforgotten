@@ -11,4 +11,4 @@ __pycache__/
 venv/
 
 # Airflow related
-.cfg
+*.cfg
