@@ -13,3 +13,4 @@ venv/
 # Airflow related
 *.cfg
 config/
+dag_processor/
