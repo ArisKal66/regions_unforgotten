@@ -28,7 +28,7 @@ This file contains several service definitions:
 
 ### Directory components
 The installation, configuration and deployment of containers should take place on a virtual environment:
-Most of the times on Windows machines, the user should update policies to create and activate virtual environment. The virtual environmeent in this case may not make too much sense, but it's a good practice after all.
+Most of the times on Windows machines, the user should update policies to create and activate virtual environment. The virtual environment in this case may not make too much sense, but it's a good practice after all.
 ```
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 python -m venv venv
