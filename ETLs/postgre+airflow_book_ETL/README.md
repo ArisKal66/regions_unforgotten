@@ -42,7 +42,7 @@ mkdir dags,logs,plugins,config
 ```
 
 After everything is set-up, the `docker-compose.yaml` fetched earlier should be in the project's root folder, while variable `AIRFLOW_UID` of the `.env` file should be assigned.
-Additionally ports of `postgres` & `pgadmin` should be assigned, with some attention to not create conflicts among other running/generated containers.
+Additionally ports of `postgres` & `pgadmin` should be assigned, with some attention to not create conflicts among other running/generated containers.  
 <img width="621" height="851" alt="image" src="https://github.com/user-attachments/assets/a292fba2-26f6-455a-ad9e-5bca6d487a0b" />
 
 
