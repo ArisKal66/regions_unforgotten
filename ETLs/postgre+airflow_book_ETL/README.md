@@ -59,9 +59,9 @@ By the time that message `airflow-init-1 exited with code 0` pops-up and the fir
 
 ### PGadmin connection:
 After logging in successfully to `http://localhost:8080/` for Airflow and `http://localhost:5052/browser/` for pg admin, a new Server should be added using the respective IP of the postgres SQL server in `Host Name/Adress` box of Connection Tab:
-    - Examining existing images with `docker container ls`
-    - `docker inspect <postgres-container-id>`
-    - Something similar should be printed on terminal:
+    1. Examining existing images with `docker container ls`
+    2. `docker inspect <postgres-container-id>`
+    3. Something similar should be printed on terminal:
 <img width="803" height="418" alt="image" src="https://github.com/user-attachments/assets/5f318d7f-208f-45f0-92ff-8ee388354f2f" />
 
 Using the postgres assigned credentials (in this case stored in `.env` file, the connection is established. The next step is to create a dedicated database for the ETL process.
