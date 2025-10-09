@@ -72,4 +72,10 @@ Using the postgres assigned credentials (in this case stored in `.env` file, the
 After logging in to Airflow through `http://localhost:8080/`, the connection is assigned by clicking on `Admin -> Add Connection ->...`, while filling the necessary info:
 <img width="1906" height="1005" alt="image" src="https://github.com/user-attachments/assets/eeed60de-115e-4c52-b207-dd87e8843ebb" />
 
-After completing this step, it's high time to start working on the DAG file using `Pytrhon`!
+After completing this step, it's high time to start working on the DAG file using `Python`!
+
+## DAG orchestration
+
+Based on sript `ETL_dag.py`, the default arguments and the initial part of the DAG is defined, and after a couple of minutes it should be visible on Airflow.  
+<img width="1912" height="435" alt="image" src="https://github.com/user-attachments/assets/d2ccfade-65b9-4ab1-b9fa-11f07c7052c0" />
+
