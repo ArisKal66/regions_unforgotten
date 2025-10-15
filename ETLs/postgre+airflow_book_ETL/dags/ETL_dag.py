@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
+from scripts.get_amazon_data_books import get_amazon_data_books
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.providers.postgres.operators.postgres import PostgresOperator
