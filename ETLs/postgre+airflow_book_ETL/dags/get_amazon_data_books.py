@@ -2,6 +2,9 @@ from datetime import datetime, timedelta
 import requests
 import pandas as pd
 from bs4 import BeautifulSoup
+from airflow.operators.python import PythonOperator
+from airflow.providers.postgres.operators.postgres import PostgresOperator
+from airflow.providers.postgres.hooks.postgres import PostgresHook
 
 headers = {
     "Referer": 'https://www.amazon.com/',
@@ -11,7 +14,7 @@ headers = {
     'User-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36'
 }
 
-def get_amazon_data_books(num_books):
+def get_amazon_data_books(num_books, ti):
     # Base URL of the Amazon search results for data science books
     base_url = f"https://www.amazon.com/s?k=data+engineering+books"
 
@@ -65,4 +68,7 @@ def get_amazon_data_books(num_books):
         page += 1
 
     df = pd.DataFrame(books[:num_books])
-    return df
+    df.drop_duplicates(inplace=True)
+
+    ti.xcom_push(key='book_data', value=df.to_dict('records'))
+    # return df
